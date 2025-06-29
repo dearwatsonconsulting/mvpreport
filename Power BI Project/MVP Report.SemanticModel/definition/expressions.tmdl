@@ -1,0 +1,38 @@
+expression Query1 =
+		let
+		    url = "https://mavenapi-prod.azurewebsites.net/api/CommunityLeaders/search/",
+		    body = Text.ToBinary("{""searchKey"":"""",""academicInstitution"":"""",""program"":[""MVP""],""countryRegionList"":[],""stateProvinceList"":[],""languagesList"":[],""milestonesList"":[],""academicCountryRegionList"":[],""technologyFocusAreaList"":[],""industryFocusList"":[],""technicalExpertiseList"":[],""technologyFocusAreaGroupList"":[],""pageIndex"":1,""pageSize"":5000}"),
+		    headers = [
+		        #"Content-Type" = "application/json",
+		        Accept = "application/json"
+		    ],
+		    response = Web.Contents(url,
+		        [
+		            Headers = headers,
+		            Content = body,
+		            ManualStatusHandling = {400,404,500}
+		        ]
+		    ),
+		    json = Json.Document(response),
+		    profiles = json[communityLeaderProfiles],
+		    profilesTable = Table.FromList(profiles, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+		    expanded = Table.ExpandRecordColumn(profilesTable, "Column1", {
+		        "firstName",
+		        "lastName",
+		        "localizedFirstName",
+		        "localizedLastName",
+		        "profilePictureUrl",
+		        "headline",
+		        "addressCountryOrRegionName",
+		        "userProfileIdentifier",
+		        "tenants"
+		    }),
+		    #"Removed Columns" = Table.RemoveColumns(expanded,{"tenants"})
+		in
+		    #"Removed Columns"
+	lineageTag: 94914a05-b251-4222-bc86-b4b072c22a23
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,61 @@
+table TechnologyFocusArea
+	lineageTag: 2148f5de-67fd-4791-a453-ee139b54de79
+
+	column id
+		dataType: string
+		lineageTag: f4b7c7c3-5ed1-480d-b368-5ea005aeb8d9
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Technology Focus Area'
+		dataType: string
+		lineageTag: b68a4da8-9d99-47ea-a632-fd8369b2df34
+		summarizeBy: none
+		sourceColumn: Technology Focus Area
+
+		annotation SummarizationSetBy = Automatic
+
+	partition TechnologyFocusArea = m
+		mode: import
+		source =
+				let
+				    // Step 1: POST to search
+				    SearchResponse = Json.Document(
+				        Web.Contents(
+				            "https://mavenapi-prod.azurewebsites.net/api/CommunityLeaders/search/",
+				            [
+				                Headers = [
+				                    #"Content-Type" = "application/json"
+				                ],
+				                Content = Text.ToBinary("{""searchKey"":"""",""program"":[""MVP""],""pageIndex"":1,""pageSize"":5000}")
+				            ]
+				        )
+				    ),
+				    // extract identifiers
+				    Profiles = SearchResponse[communityLeaderProfiles],
+				    ProfileIds = List.Transform(Profiles, each _[userProfileIdentifier]),
+				
+				    // Step 2: define a function to get full details
+				    GetProfileDetails = (profileId as text) =>
+				        let
+				            url = "https://mavenapi-prod.azurewebsites.net/api/mvp/UserProfiles/public/" & profileId,
+				            details = Json.Document(Web.Contents(url))
+				        in
+				            details[userProfile]
+				    ,
+				
+				    // Step 3: call for each profile
+				    AllProfiles = List.Transform(ProfileIds, each GetProfileDetails(_)),
+				    #"Converted to Table" = Table.FromList(AllProfiles, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"id", "technologyFocusArea"}, {"id", "technologyFocusArea"}),
+				    #"Expanded technologyFocusArea" = Table.ExpandListColumn(#"Expanded Column1", "technologyFocusArea"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded technologyFocusArea",{{"technologyFocusArea", "Technology Focus Area"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

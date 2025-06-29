@@ -1,0 +1,329 @@
+table MVPs
+	lineageTag: b248e01e-0e7b-4494-b343-36e92f95ac14
+
+	column companyName
+		dataType: string
+		lineageTag: 6e6cc8e6-f2d6-4c5e-8a54-0f7d833581c0
+		summarizeBy: none
+		sourceColumn: companyName
+
+		annotation SummarizationSetBy = Automatic
+
+	column companyRole
+		dataType: string
+		lineageTag: 8b65acaa-523d-4a3b-8caf-4b16a31ec14e
+		summarizeBy: none
+		sourceColumn: companyRole
+
+		annotation SummarizationSetBy = Automatic
+
+	column isProfessionalInformationPrivate
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: d9eae880-0269-42e3-b435-78cf51aaf8a4
+		summarizeBy: none
+		sourceColumn: isProfessionalInformationPrivate
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Years in Program'
+		dataType: int64
+		formatString: 0
+		lineageTag: f375017b-e879-4d77-a335-03639e16b998
+		summarizeBy: sum
+		sourceColumn: Years in Program
+
+		annotation SummarizationSetBy = Automatic
+
+	column functionalRoles
+		dataType: string
+		lineageTag: d6cf955a-6457-42c9-9cb3-87a05f736c8a
+		summarizeBy: none
+		sourceColumn: functionalRoles
+
+		annotation SummarizationSetBy = Automatic
+
+	column technologyFocusArea
+		dataType: string
+		lineageTag: 02ee7a7d-6586-4032-b90d-942b6142ee54
+		summarizeBy: none
+		sourceColumn: technologyFocusArea
+
+		annotation SummarizationSetBy = Automatic
+
+	column awardCategory
+		dataType: string
+		lineageTag: 2041b167-2124-4cff-8be1-b764c5ca5f70
+		summarizeBy: none
+		sourceColumn: awardCategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column id
+		dataType: string
+		lineageTag: 504b81af-7614-4be0-a573-fbecc77f5b1c
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column firstName
+		dataType: string
+		lineageTag: 2ed25fcb-6627-4ae4-a9ac-ff0d67d8eeb1
+		summarizeBy: none
+		sourceColumn: firstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column lastName
+		dataType: string
+		lineageTag: 0c159079-275c-48e3-9c14-a2bfdf71b7b1
+		summarizeBy: none
+		sourceColumn: lastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column localizedFirstName
+		dataType: string
+		lineageTag: 103f6cef-3297-401d-a90f-c525952abed0
+		summarizeBy: none
+		sourceColumn: localizedFirstName
+
+		annotation SummarizationSetBy = Automatic
+
+	column localizedLastName
+		dataType: string
+		lineageTag: 78b1ff37-4a26-4af8-95ae-b30a23675eda
+		summarizeBy: none
+		sourceColumn: localizedLastName
+
+		annotation SummarizationSetBy = Automatic
+
+	column pictureLink
+		dataType: string
+		lineageTag: d9e88a85-31c5-4e46-a87d-b049c5f9c19b
+		summarizeBy: none
+		sourceColumn: pictureLink
+
+		annotation SummarizationSetBy = Automatic
+
+	column headline
+		dataType: string
+		lineageTag: d62e3260-270f-41a8-9ce6-6d8e3ce6186d
+		summarizeBy: none
+		sourceColumn: headline
+
+		annotation SummarizationSetBy = Automatic
+
+	column biography
+		dataType: string
+		lineageTag: d4d1d9c5-d656-4935-af1f-3d37309f02c0
+		summarizeBy: none
+		sourceColumn: biography
+
+		annotation SummarizationSetBy = Automatic
+
+	column awardNameLocalized
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 159410d9-47d6-4448-8e98-11515d05edc2
+		summarizeBy: none
+		sourceColumn: awardNameLocalized
+
+		annotation SummarizationSetBy = Automatic
+
+	column screenNameLocalized
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 744dbddb-2a62-4f86-b825-f9e4bd63bb5a
+		summarizeBy: none
+		sourceColumn: screenNameLocalized
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country/Region
+		dataType: string
+		lineageTag: 1a72e325-50f8-4ff0-a643-4924b6d25f6b
+		summarizeBy: none
+		sourceColumn: Country/Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column addressCountryOrRegionNameLocKey
+		dataType: string
+		lineageTag: e6f16099-7dab-4d0d-a612-5603141fbfc3
+		summarizeBy: none
+		sourceColumn: addressCountryOrRegionNameLocKey
+
+		annotation SummarizationSetBy = Automatic
+
+	column title
+		dataType: string
+		lineageTag: 79f1bdf2-9953-44d5-81d4-65d0bcfd4db4
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column genderName
+		dataType: string
+		lineageTag: 2d64ccc8-c3b4-4f9d-953a-52673e3347c9
+		summarizeBy: none
+		sourceColumn: genderName
+
+		annotation SummarizationSetBy = Automatic
+
+	column genderPronounPreferenceName
+		dataType: string
+		lineageTag: b0295ed5-1dbf-4263-8fa5-724822651c02
+		summarizeBy: none
+		sourceColumn: genderPronounPreferenceName
+
+		annotation SummarizationSetBy = Automatic
+
+	column profilePictureBase64
+		dataType: string
+		lineageTag: f4769340-fab9-43a3-9ab4-17a33e15c1fe
+		summarizeBy: none
+		sourceColumn: profilePictureBase64
+
+		annotation SummarizationSetBy = Automatic
+
+	column profilePictureUrl
+		dataType: string
+		lineageTag: e7ac0767-4227-4d8c-b908-567669af6527
+		dataCategory: ImageUrl
+		summarizeBy: none
+		sourceColumn: profilePictureUrl
+
+		annotation SummarizationSetBy = Automatic
+
+	column tenants
+		dataType: string
+		lineageTag: bf51111c-0a89-48cc-ac7b-34326958619c
+		summarizeBy: none
+		sourceColumn: tenants
+
+		annotation SummarizationSetBy = Automatic
+
+	column languages
+		dataType: string
+		lineageTag: 075de2cf-b42f-498f-912c-4ecb0f548b5f
+		summarizeBy: none
+		sourceColumn: languages
+
+		annotation SummarizationSetBy = Automatic
+
+	column programLanguages
+		dataType: string
+		lineageTag: 93e3c5e7-d5ab-48cb-808b-c21f3cb72037
+		summarizeBy: none
+		sourceColumn: programLanguages
+
+		annotation SummarizationSetBy = Automatic
+
+	column userProfileIdentifier
+		dataType: string
+		lineageTag: 7ca58e05-6de7-496f-8322-df2aa37e30d2
+		summarizeBy: none
+		sourceColumn: userProfileIdentifier
+
+		annotation SummarizationSetBy = Automatic
+
+	column isPrivate
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 17628921-2d88-49a3-abea-0bd2b6c28c65
+		summarizeBy: none
+		sourceColumn: isPrivate
+
+		annotation SummarizationSetBy = Automatic
+
+	column userProfileSocialNetwork
+		dataType: string
+		lineageTag: a0540284-4be9-4490-8bba-ce20f0224e34
+		summarizeBy: none
+		sourceColumn: userProfileSocialNetwork
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'full name' = MVPs[firstName] & " " & MVPs[lastName]
+		lineageTag: 0427cfc8-4855-462c-ac69-b825b1b951ef
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Years in Program (group)'
+		dataType: string
+		lineageTag: 2a29485a-d20e-4ec2-b5d4-545c7a60f425
+		summarizeBy: none
+		sourceColumn: Years in Program (group)
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Years in Program Bin' =
+			
+			SWITCH(
+			    TRUE(),
+			    [Years in Program] >= 0 && [Years in Program] <= 4, "0 - 4",
+			    [Years in Program] >= 5 && [Years in Program] <= 9, "5 - 9",
+			    [Years in Program] >= 10 && [Years in Program] <= 14, "10 - 14",
+			    [Years in Program] >= 15 && [Years in Program] <= 19, "15 - 19",
+			    [Years in Program] >= 20 && [Years in Program] <= 24, "20 - 24",
+			    [Years in Program] >= 25 && [Years in Program] <= 29, "25 - 29",
+			    [Years in Program] >= 30 && [Years in Program] <= 34, "30 - 34",
+			    [Years in Program] >= 35 && [Years in Program] <= 39, "35 - 39",
+			    [Years in Program] >= 40 && [Years in Program] <= 44, "40 - 44",
+			    [Years in Program] >= 45 && [Years in Program] <= 49, "45 - 49",
+			    [Years in Program] >= 50, "50+",
+			    BLANK()
+			)
+		lineageTag: e8dbe7cf-89fc-4261-bf79-b88188daf15d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
+	partition MVPs = m
+		mode: import
+		source =
+				let
+				    // Step 1: POST to search
+				    SearchResponse = Json.Document(
+				        Web.Contents(
+				            "https://mavenapi-prod.azurewebsites.net/api/CommunityLeaders/search/",
+				            [
+				                Headers = [
+				                    #"Content-Type" = "application/json"
+				                ],
+				                Content = Text.ToBinary("{""searchKey"":"""",""program"":[""MVP""],""pageIndex"":1,""pageSize"":5000}")
+				            ]
+				        )
+				    ),
+				    // extract identifiers
+				    Profiles = SearchResponse[communityLeaderProfiles],
+				    ProfileIds = List.Transform(Profiles, each _[userProfileIdentifier]),
+				
+				    // Step 2: define a function to get full details
+				    GetProfileDetails = (profileId as text) =>
+				        let
+				            url = "https://mavenapi-prod.azurewebsites.net/api/mvp/UserProfiles/public/" & profileId,
+				            details = Json.Document(Web.Contents(url))
+				        in
+				            details[userProfile]
+				    ,
+				
+				    // Step 3: call for each profile
+				    AllProfiles = List.Transform(ProfileIds, each GetProfileDetails(_)),
+				    #"Converted to Table" = Table.FromList(AllProfiles, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"companyName", "companyRole", "isProfessionalInformationPrivate", "yearsInProgram", "functionalRoles", "technologyFocusArea", "awardCategory", "id", "firstName", "lastName", "localizedFirstName", "localizedLastName", "pictureLink", "headline", "biography", "awardNameLocalized", "screenNameLocalized", "addressCountryOrRegionName", "addressCountryOrRegionNameLocKey", "titleName", "genderName", "genderPronounPreferenceName", "profilePictureBase64", "profilePictureUrl", "tenants", "languages", "programLanguages", "userProfileIdentifier", "isPrivate", "userProfileSocialNetwork"}, {"companyName", "companyRole", "isProfessionalInformationPrivate", "yearsInProgram", "functionalRoles", "technologyFocusArea", "awardCategory", "id", "firstName", "lastName", "localizedFirstName", "localizedLastName", "pictureLink", "headline", "biography", "awardNameLocalized", "screenNameLocalized", "addressCountryOrRegionName", "addressCountryOrRegionNameLocKey", "titleName", "genderName", "genderPronounPreferenceName", "profilePictureBase64", "profilePictureUrl", "tenants", "languages", "programLanguages", "userProfileIdentifier", "isPrivate", "userProfileSocialNetwork"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded Column1",{{"addressCountryOrRegionName", "Country/Region"}, {"yearsInProgram", "Years in Program"}}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Renamed Columns",{{"Years in Program", Int64.Type}, {"companyName", type text}, {"companyRole", type text}, {"isProfessionalInformationPrivate", type logical}, {"functionalRoles", type any}, {"technologyFocusArea", type any}, {"awardCategory", type any}, {"id", type text}, {"firstName", type text}, {"lastName", type text}, {"localizedFirstName", type text}, {"localizedLastName", type text}, {"pictureLink", type any}, {"headline", type text}, {"biography", type text}, {"awardNameLocalized", type logical}, {"screenNameLocalized", type logical}, {"Country/Region", type text}, {"addressCountryOrRegionNameLocKey", type text}, {"titleName", type text}, {"genderName", type any}, {"genderPronounPreferenceName", type text}, {"profilePictureBase64", type any}, {"profilePictureUrl", type text}, {"tenants", type any}, {"languages", type any}, {"programLanguages", type any}, {"userProfileIdentifier", type text}, {"isPrivate", type logical}, {"userProfileSocialNetwork", type any}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Changed Type", "Years in Program (group)", each if [Years in Program] < 5 then "0 - 4" else if [Years in Program] < 10 then #date(2025, 9, 5) else if [Years in Program] < 15 then "10 - 14" else if [Years in Program] < 20 then "15 - 19" else if [Years in Program] < 25 then "20 -  24" else if [Years in Program] < 30 then "25 - 29" else 30),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Added Conditional Column",{{"titleName", "title"}})
+				in
+				    #"Renamed Columns1"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

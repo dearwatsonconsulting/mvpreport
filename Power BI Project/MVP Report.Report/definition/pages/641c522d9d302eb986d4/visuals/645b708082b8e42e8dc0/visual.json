@@ -1,0 +1,72 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "645b708082b8e42e8dc0",
+  "position": {
+    "x": 858.36403831982318,
+    "y": 690.46425939572589,
+    "z": 12000,
+    "height": 29.240972733972,
+    "width": 415.033161385409,
+    "tabOrder": 12000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "MVP report by ",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    }
+                  },
+                  {
+                    "value": "@Loryan Strant",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    },
+                    "url": "https://www.linkedin.com/in/loryanstrant"
+                  },
+                  {
+                    "value": " and ",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    }
+                  },
+                  {
+                    "value": "@Greg Nash",
+                    "textStyle": {
+                      "color": "#ffffff"
+                    },
+                    "url": "https://www.linkedin.com/in/gregnash78/"
+                  }
+                ],
+                "horizontalTextAlignment": "right"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "background": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

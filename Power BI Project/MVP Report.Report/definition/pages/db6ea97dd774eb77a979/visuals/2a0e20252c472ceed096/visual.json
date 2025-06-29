@@ -1,0 +1,250 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.1.0/schema.json",
+  "name": "2a0e20252c472ceed096",
+  "position": {
+    "x": 8.4893146647015474,
+    "y": 70.7442888725129,
+    "z": 4000,
+    "height": 608.400884303611,
+    "width": 934.76787030213711,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MVPs"
+                    }
+                  },
+                  "Property": "id"
+                }
+              },
+              "queryRef": "MVPs.id",
+              "nativeQueryRef": "id"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MVPs"
+                    }
+                  },
+                  "Property": "title"
+                }
+              },
+              "queryRef": "MVPs.titleName",
+              "nativeQueryRef": "title"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MVPs"
+                    }
+                  },
+                  "Property": "full name"
+                }
+              },
+              "queryRef": "MVPs.Full Name",
+              "nativeQueryRef": "full name"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MVPs"
+                    }
+                  },
+                  "Property": "headline"
+                }
+              },
+              "queryRef": "MVPs.headline",
+              "nativeQueryRef": "headline"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "award categories"
+                }
+              },
+              "queryRef": "_Measures.award categories",
+              "nativeQueryRef": "award categories"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "tech focus areas"
+                }
+              },
+              "queryRef": "_Measures.tech focus areas",
+              "nativeQueryRef": "tech focus areas"
+            },
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "MVPs"
+                    }
+                  },
+                  "Property": "Country/Region"
+                }
+              },
+              "queryRef": "MVPs.Country/Region",
+              "nativeQueryRef": "Country/Region"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "MVPs"
+                        }
+                      },
+                      "Property": "Years in Program"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(MVPs.Years in Program)",
+              "nativeQueryRef": "Years in Program",
+              "displayName": "Years in Program"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Aggregation": {
+                "Expression": {
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "MVPs"
+                      }
+                    },
+                    "Property": "Years in Program"
+                  }
+                },
+                "Function": 0
+              }
+            },
+            "direction": "Descending"
+          }
+        ]
+      }
+    },
+    "objects": {
+      "columnWidth": [
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "75.17324514785174D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MVPs.titleName"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "163.67938082406693D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MVPs.Full Name"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "310.71570933340877D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "MVPs.headline"
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Literal": {
+                  "Value": "200.22033550147188D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.award categories"
+          }
+        }
+      ],
+      "total": [
+        {
+          "properties": {
+            "totals": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "values": [
+        {
+          "properties": {
+            "wordWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

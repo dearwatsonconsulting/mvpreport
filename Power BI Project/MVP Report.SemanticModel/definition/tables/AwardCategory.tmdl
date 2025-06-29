@@ -1,0 +1,61 @@
+table AwardCategory
+	lineageTag: caf7c44f-3366-47d1-bd9a-7b9621580782
+
+	column 'award category'
+		dataType: string
+		lineageTag: a1fbc4df-7b3a-4dfd-96fc-ee2ee0cfa19a
+		summarizeBy: none
+		sourceColumn: award category
+
+		annotation SummarizationSetBy = Automatic
+
+	column id
+		dataType: string
+		lineageTag: bf2bc355-8192-45fc-8ab5-e4057148aaf0
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	partition AwardCategory = m
+		mode: import
+		source =
+				let
+				    // Step 1: POST to search
+				    SearchResponse = Json.Document(
+				        Web.Contents(
+				            "https://mavenapi-prod.azurewebsites.net/api/CommunityLeaders/search/",
+				            [
+				                Headers = [
+				                    #"Content-Type" = "application/json"
+				                ],
+				                Content = Text.ToBinary("{""searchKey"":"""",""program"":[""MVP""],""pageIndex"":1,""pageSize"":5000}")
+				            ]
+				        )
+				    ),
+				    // extract identifiers
+				    Profiles = SearchResponse[communityLeaderProfiles],
+				    ProfileIds = List.Transform(Profiles, each _[userProfileIdentifier]),
+				
+				    // Step 2: define a function to get full details
+				    GetProfileDetails = (profileId as text) =>
+				        let
+				            url = "https://mavenapi-prod.azurewebsites.net/api/mvp/UserProfiles/public/" & profileId,
+				            details = Json.Document(Web.Contents(url))
+				        in
+				            details[userProfile]
+				    ,
+				
+				    // Step 3: call for each profile
+				    AllProfiles = List.Transform(ProfileIds, each GetProfileDetails(_)),
+				    #"Converted to Table" = Table.FromList(AllProfiles, Splitter.SplitByNothing(), null, null, ExtraValues.Error),
+				    #"Expanded Column1" = Table.ExpandRecordColumn(#"Converted to Table", "Column1", {"awardCategory", "id"}, {"awardCategory", "id"}),
+				    #"Expanded awardCategory" = Table.ExpandListColumn(#"Expanded Column1", "awardCategory"),
+				    #"Renamed Columns" = Table.RenameColumns(#"Expanded awardCategory",{{"awardCategory", "award category"}})
+				in
+				    #"Renamed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

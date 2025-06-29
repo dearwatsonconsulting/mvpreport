@@ -1,0 +1,10 @@
+relationship 9ed6464f-914d-ad5b-b002-7bb2b2e47d08
+	crossFilteringBehavior: bothDirections
+	fromColumn: AwardCategory.id
+	toColumn: MVPs.id
+
+relationship 57387bd3-b9e5-dc7a-1d1f-1e1023499526
+	crossFilteringBehavior: bothDirections
+	fromColumn: TechnologyFocusArea.id
+	toColumn: MVPs.id
+

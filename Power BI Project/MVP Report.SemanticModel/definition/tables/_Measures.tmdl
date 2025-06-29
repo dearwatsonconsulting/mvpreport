@@ -1,0 +1,47 @@
+table _Measures
+	lineageTag: f2c7a61e-27b3-4580-953e-cb29e46aa88d
+
+	measure 'MVP Count' = DISTINCTCOUNT(MVPs[id])
+		formatString: #,0
+		lineageTag: 640058d8-3a97-48c2-8759-9da216325d0c
+
+	measure 'Average Tenure (yrs)' = AVERAGE(MVPs[Years in Program])
+		lineageTag: df03a21a-9a9b-48aa-aefa-c24c732a0735
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Longest serving (yrs)' = MAX(MVPs[Years in Program])
+		formatString: 0
+		lineageTag: 02e87385-378f-4a25-a9d3-ca764664e357
+
+	measure Bio = SELECTEDVALUE(MVPs[biography],"Select an MVP")
+		lineageTag: 5aa7d692-7e71-406b-aa84-4b9dbbeb472f
+
+	measure 'Average MVPs per Location' = DIVIDE([MVP Count],DISTINCTCOUNT(MVPs[Country/Region]))
+		lineageTag: 6716cba1-adfa-4510-a65c-50e0e93ff816
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'award categories' = CONCATENATEX(AwardCategory, AwardCategory[award category], " , ")
+		lineageTag: 7ef1fd93-7f7f-40d6-bd06-2a3931279707
+
+	measure 'tech focus areas' = CONCATENATEX(TechnologyFocusArea, TechnologyFocusArea[Technology Focus Area], " , ")
+		lineageTag: 466dd0eb-fd43-4a86-b15e-eb5216b8da21
+
+	measure Headline = SELECTEDVALUE(MVPs[headline],"Select an MVP")
+		lineageTag: b82e3072-a38a-406f-aa95-d6321069790e
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
