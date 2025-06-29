@@ -353,5 +353,79 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "e36ac0e86ee05c9a9e9b",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "AwardCategory"
+              }
+            },
+            "Property": "award category"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a0d944d0b96b069608a2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "MVP Count"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "a289a5aae13463125aa8",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "TechnologyFocusArea"
+              }
+            },
+            "Property": "Technology Focus Area"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "c6a72179c6b500969201",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MVPs"
+              }
+            },
+            "Property": "full name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "366614a0700c0385be2e",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MVPs"
+              }
+            },
+            "Property": "Country/Region"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }

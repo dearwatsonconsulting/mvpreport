@@ -31,6 +31,13 @@ table _Measures
 	measure Headline = SELECTEDVALUE(MVPs[headline],"Select an MVP")
 		lineageTag: b82e3072-a38a-406f-aa95-d6321069790e
 
+	measure 'Full Name' = CALCULATE(SELECTEDVALUE(MVPs[full name],"Multiple MVPs"),MVPs[Years in Program]=MAX(MVPs[Years in Program]))
+		lineageTag: 2488e1ef-85bd-4a04-96e1-d690cf269e87
+
+	measure 'URL Link' = CALCULATE(SELECTEDVALUE(MVPs[profilePictureUrl]),MVPs[Years in Program]=MAX(MVPs[Years in Program]))
+		lineageTag: 40cc53f1-2cfb-4094-8871-73c3a75d331a
+		dataCategory: ImageUrl
+
 	partition _Measures = m
 		mode: import
 		source =

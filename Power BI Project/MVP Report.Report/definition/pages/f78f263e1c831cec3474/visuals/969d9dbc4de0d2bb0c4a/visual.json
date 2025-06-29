@@ -17,47 +17,22 @@
           "projections": [
             {
               "field": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "MVPs"
-                        }
-                      },
-                      "Property": "full name"
+                    "SourceRef": {
+                      "Entity": "_Measures"
                     }
                   },
-                  "Function": 3
+                  "Property": "Full Name"
                 }
               },
-              "queryRef": "Min(MVPs.Full Name)",
-              "nativeQueryRef": "First full name"
+              "queryRef": "_Measures.Full Name",
+              "nativeQueryRef": "Full Name"
             }
           ]
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Aggregation": {
-                "Expression": {
-                  "Column": {
-                    "Expression": {
-                      "SourceRef": {
-                        "Entity": "MVPs"
-                      }
-                    },
-                    "Property": "full name"
-                  }
-                },
-                "Function": 3
-              }
-            },
-            "direction": "Ascending"
-          }
-        ],
         "isDefaultSort": true
       }
     },
@@ -164,18 +139,13 @@
             },
             "imageUrl": {
               "expr": {
-                "Aggregation": {
+                "Measure": {
                   "Expression": {
-                    "Column": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Entity": "MVPs"
-                        }
-                      },
-                      "Property": "profilePictureUrl"
+                    "SourceRef": {
+                      "Entity": "_Measures"
                     }
                   },
-                  "Function": 3
+                  "Property": "URL Link"
                 }
               }
             },

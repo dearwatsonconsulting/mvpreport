@@ -336,5 +336,126 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0626d11fbaad0756b042",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MVPs"
+              }
+            },
+            "Property": "Country/Region"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "ee42fc3121d0b85c5c3c",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MVPs"
+              }
+            },
+            "Property": "full name"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "a6912a30765479a61e30",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MVPs"
+              }
+            },
+            "Property": "id"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "6375bb82e0429e859c57",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MVPs"
+              }
+            },
+            "Property": "title"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "5ad5b19764b0055be049",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "MVPs"
+                  }
+                },
+                "Property": "Years in Program"
+              }
+            },
+            "Function": 0
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "9f9784c0de68e614e11c",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "award categories"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "d761a89a7637596e0205",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "_Measures"
+              }
+            },
+            "Property": "tech focus areas"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "813db64e98aba1752e07",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "MVPs"
+              }
+            },
+            "Property": "companyName"
+          }
+        },
+        "type": "Categorical"
+      }
+    ]
   }
 }
